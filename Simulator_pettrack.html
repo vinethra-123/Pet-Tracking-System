@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIM | Pet Track</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+</head>
+
+<body style="margin: 0;">
+    <div id="map" style="height: 100vh; width:100vw"></div>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <script>
+        var map = L.map('map').setView({ lon: 79.8643, lat: 6.9293 }, 14);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
+        }).addTo(map);
+        L.control.scale({ imperial: true, metric: true }).addTo(map);
+    </script>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-app.js";
+        import { getDatabase, child, get, ref, update } from "https://www.gstatic.com/firebasejs/9.6.7/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyCefkXO93MYvw4gGkljXuE0Y_jWr-Q29zY",
+            authDomain: "pettracking-e0ec8.firebaseapp.com",
+            databaseURL: "https://pettracking-e0ec8.firebaseio.com",
+            projectId: "pettracking-e0ec8",
+            storageBucket: "pettracking-e0ec8.appspot.com",
+            messagingSenderId: "1034045681430",
+            appId: "1:1034045681430:web:866445a5b1f33c10ffea37"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+        get(child(ref(db), `devices/`)).then((snapshot) => {
+            if (snapshot.exists()) {
+                for (const prop in snapshot.val()) {
+                    const item = snapshot.val()[prop];
+                    const marker = L.marker({ lat: item.split(",")[0], lon: item.split(",")[1] }, { draggable: true }).bindPopup('Device').addTo(map);
+                    marker.on('dragend', function (e) {
+                        const updates = {};
+                        updates['devices/' + prop] = marker.getLatLng().lat + "," + marker.getLatLng().lng;
+                        console.log(marker.getLatLng().lat + "," + marker.getLatLng().lng);
+                        update(ref(db), updates);
+                    });
+                }
+            } else {
+                console.log("No data available");
+            }
+        }).catch((error) => {
+            console.error(error);
+        });
+
+    </script>
+</body>
+</html>
