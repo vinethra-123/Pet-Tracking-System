@@ -1,0 +1,106 @@
+{
+  "project_info": {
+    "project_number": "1034045681430",
+    "firebase_url": "https://pettracking-e0ec8.firebaseio.com",
+    "project_id": "pettracking-e0ec8",
+    "storage_bucket": "pettracking-e0ec8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034045681430:android:c68cfa3a3571f385ffea37",
+        "android_client_info": {
+          "package_name": "com.e.gpsappllcation"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034045681430-5mcuu0bs5oo5lg12dhbtnn2aao9stif2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIvW076K0Q94G8zrT69gCsP3O1azgnUHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034045681430-5mcuu0bs5oo5lg12dhbtnn2aao9stif2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034045681430:android:4f0d03103967eddb",
+        "android_client_info": {
+          "package_name": "com.e.testapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034045681430-19b3nomubd6ns0np4njhqm4ckou0le7i.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.e.testapp",
+            "certificate_hash": "0aed5850949c3b720cb9f36a496a0eef263f4883"
+          }
+        },
+        {
+          "client_id": "1034045681430-5mcuu0bs5oo5lg12dhbtnn2aao9stif2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIvW076K0Q94G8zrT69gCsP3O1azgnUHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034045681430-5mcuu0bs5oo5lg12dhbtnn2aao9stif2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1034045681430:android:30b670fe9a069cdeffea37",
+        "android_client_info": {
+          "package_name": "com.vinu.pet_track"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1034045681430-5mcuu0bs5oo5lg12dhbtnn2aao9stif2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIvW076K0Q94G8zrT69gCsP3O1azgnUHY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1034045681430-5mcuu0bs5oo5lg12dhbtnn2aao9stif2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
